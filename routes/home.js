@@ -12,7 +12,11 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const weatherData = await helpers.callCity(req.body.city, req.body.state);
-  res.send(searchResults(weatherData));
+  if (weatherData !== undefined) {
+    res.send(searchResults(weatherData));
+  } else {
+    res.send(searchView('There was an error retrieving the data.'));
+  }
 });
 
 module.exports = router;
