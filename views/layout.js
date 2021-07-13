@@ -2,15 +2,24 @@ module.exports = (content) => {
   return `
   <!DOCTYPE html>
   <html>
-    <head> </head>
+    <head>
+      <link href="/css/styles.css" rel="stylesheet" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css"
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
     <body>
-      <div>
-        <h1>Weather App</h1>
-        <h2>Header Here</h2>
+      <div class="container">
+        <div class="row" id="headerDiv">
+        <div class="col-lg-12">
+          <h1 id="mainLogo" class="card large">Weather App</h1>
+          </div>
+        </div>
       </div>
-      <div>
-      <h5>Content Here</h5>
-        ${content}
+      <div class="row">
+          <div class="card">${content}</div>
       </div>
       <div>
         <h2>Footer Here</h2>

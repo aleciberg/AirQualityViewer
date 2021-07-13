@@ -1,0 +1,22 @@
+.container {
+}
+
+.row {
+  align-items: center;
+  justify-content: center;
+}
+
+.col-lg-12 {
+  align-items: center;
+  justify-content: center;
+}
+
+#mainLogo {
+  align-items: center;
+  justify-content: center;
+}
+
+#headerDiv {
+  align-items: center;
+  justify-content: center;
+}
