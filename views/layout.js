@@ -14,15 +14,14 @@ module.exports = (content) => {
       <div class="container">
         <div class="row" id="headerDiv">
         <div class="col-lg-12">
+        <a href="/">          
           <h1 id="mainLogo" class="card large">Weather App</h1>
+        </a>
           </div>
         </div>
       </div>
       <div class="row">
           <div class="card">${content}</div>
-      </div>
-      <div>
-        <h2>Footer Here</h2>
       </div>
     </body>
   </html>
