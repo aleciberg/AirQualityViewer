@@ -12,6 +12,7 @@ module.exports = (state, cities) => {
   <form action="/result" method="post">
   <h2>${state}</h2>
   <input name="state" value="${state}" type="hidden"/>
+  <input name="city" value="${city}" type="hidden"/>
   <select id="City" name="city">
   <option value="" disabled selected>Select your city</option>
   ${renderedItems}
