@@ -7,8 +7,6 @@ module.exports = (state, cities) => {
     `;
   });
 
-  console.log(renderedItems.length);
-
   return layout(`
   <div>
   <form action="/result" method="post">

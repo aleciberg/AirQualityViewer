@@ -10,18 +10,18 @@ module.exports = (content) => {
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
-    <body>
+    <body style="background-color: grey">
       <div class="container">
-        <div class="row" id="headerDiv">
-        <div class="col-lg-12">
-        <a href="/">          
-          <h1 id="mainLogo" class="card large">Weather App</h1>
-        </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
+          <div class="row" id="headerDiv">
+              <div class="col-lg-12">
+                <a href="/">
+                  <h1 id="mainLogo" class="card large">Weather App</h1>
+                </a>
+              </div>
+            </div>
+          <div class="row">
           <div class="card">${content}</div>
+        </div>
       </div>
     </body>
   </html>

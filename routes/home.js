@@ -23,6 +23,9 @@ router.post('/state', async (req, res) => {
 
 router.post('/result', async (req, res) => {
   const result = await helpers.callCity(req.body.city, req.body.state);
+  if (result === undefined) {
+    res.send('There has been an error pulling the cities.');
+  }
   res.send(searchResults(result));
 });
 
