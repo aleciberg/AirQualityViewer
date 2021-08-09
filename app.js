@@ -1,14 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const baseRouter = require('./routes/home');
-const path = require('path');
 const multer = require('multer');
+const cookieSession = require('cookie-session');
 const app = express();
 const port = 3000;
-const upload = multer();
-const layout = require('./views/layout');
 
 app.use(express.static('public'));
+
+app.use(
+  cookieSession({
+    keys: ['a89076s0d87fvbmdwkrtu'],
+  })
+);
 
 app.use(express.urlencoded({ extended: false }));
 // app.use(express.json());
