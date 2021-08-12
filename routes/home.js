@@ -1,36 +1,57 @@
 const express = require('express');
 const router = express.Router();
-const helpers = require('../routes/helpers');
-const upload = require('multer');
-const layout = require('../views/layout');
 const searchResults = require('../views/searchResults');
 const searchView = require('../views/search');
-const state = require('../views/state');
-const { response } = require('express');
+const { callCity } = require('../routes/helpers');
+const loginView = require('../views/login');
+const signUpView = require('../views/signup');
+const users = require('../repos/user');
 
 router.get('/', async (req, res) => {
   res.send(searchView());
 });
 
 router.post('/', async (req, res) => {
-  res.redirect(307, '/state');
-});
-
-router.post('/state', async (req, res) => {
-  const cities = await helpers.callState(req.body.state);
-  res.send(state(req.body.state, cities));
-});
-
-router.post('/result', async (req, res) => {
-  const result = await helpers.callCity(req.body.city, req.body.state);
-  if (result === undefined) {
-    res.send('There has been an error pulling the cities.');
+  const results = await callCity(req.body.city, req.body.state);
+  if (results === undefined) {
+    res.send(
+      search(
+        `There was an error searching for ${req.body.city}, ${req.body.state}`
+      )
+    );
   }
-  res.send(searchResults(result));
+  res.send(searchResults(results));
+});
+
+router.get('/login', async (req, res) => {
+  res.send(loginView());
+});
+
+router.post('/login', async (req, res) => {
+  // once repo is set up we can confirm login and use cookies
+  // req.session.userId = user.id;
+
+  // retrieve user after comparing passwords, need to add middleware
+
+  //draft compare function
+  const { username } = req.body;
+  await users.verify(req.body)
+  res.redirect('/');
+});
+
+router.get('/signup', async (req, res) => {
+  res.send(signUpView());
+});
+
+router.post('/signup', async (req, res) => {
+  console.log(req.body);
+  // update repo with new user
+  users.create({
+    username: req.body.user,
+    password: req.body.password,
+  });
+  // redirect to home screen with message
+  res.send('received');
 });
 
 module.exports = router;
-
-// / will post and redirect to state
-// res.send state view
-// state will have the state and use an API call to populate city dropdown

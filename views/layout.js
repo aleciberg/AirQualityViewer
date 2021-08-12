@@ -11,6 +11,13 @@ module.exports = (content) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body style="background-color: grey">
+    <div>
+      <div id="toolbar">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+      </div>
+    </div>
       <div class="container">
           <div class="row" id="headerDiv">
               <div class="col-lg-12">
