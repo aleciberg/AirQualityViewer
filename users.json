@@ -1,0 +1,48 @@
+[
+  {
+    "password": [
+      "alec",
+      "alec"
+    ],
+    "id": "9473c491"
+  },
+  {
+    "password": "alec",
+    "id": "161ca68c"
+  },
+  {
+    "username": "alec2",
+    "password": "alec",
+    "id": "5831e958"
+  },
+  {
+    "username": "alec2",
+    "password": "alec",
+    "id": "290e2395"
+  },
+  {
+    "username": "naomi",
+    "password": "naomi",
+    "id": "e986e587"
+  },
+  {
+    "username": "naomi",
+    "password": "password",
+    "id": "884bb889"
+  },
+  {
+    "username": "yes",
+    "password": "buddy",
+    "id": "05961ed2"
+  },
+  {
+    "username": "yes",
+    "password": "9ae7d2f0ae9b8d4127ca47aec49e046da8fdc0ccfab6ea54b9628988dc63921f|c70a45649e26ac66",
+    "id": "78abcd10"
+  },
+  {
+    "username": "budden",
+    "password": "bae6a43ea23bbf7a59cc6db0c90a0d78f9faab424ea75277648caf1df84dde9a|f2735494d6e97060",
+    "id": "3777f448"
+  }
+]

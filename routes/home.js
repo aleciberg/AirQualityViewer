@@ -5,6 +5,7 @@ const searchView = require('../views/search');
 const { callCity } = require('../routes/helpers');
 const loginView = require('../views/login');
 const signUpView = require('../views/signup');
+const users = require('../repos/user');
 
 router.get('/', async (req, res) => {
   res.send(searchView());
@@ -30,6 +31,11 @@ router.post('/login', async (req, res) => {
   // once repo is set up we can confirm login and use cookies
   // req.session.userId = user.id;
 
+  // retrieve user after comparing passwords, need to add middleware
+
+  //draft compare function
+  const { username } = req.body;
+  await users.verify(req.body)
   res.redirect('/');
 });
 
@@ -39,6 +45,12 @@ router.get('/signup', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
   console.log(req.body);
+  // update repo with new user
+  users.create({
+    username: req.body.user,
+    password: req.body.password,
+  });
+  // redirect to home screen with message
   res.send('received');
 });
 

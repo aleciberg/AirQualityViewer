@@ -8,7 +8,7 @@ module.exports = () => {
         <form action="/signup" method="post">
                 <input id="user" name="user" placeholder="Username" />
                 <input id="password" name="password" placeholder="Password" />
-                <input id="password" name="password" placeholder="Confirm Password" />
+                <input id="password" name="passwordConfirmation" placeholder="Confirm Password" />
                 <button id="button" type="submit">Submit</button>
             </form>
         </div>
