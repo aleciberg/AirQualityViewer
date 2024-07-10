@@ -1,0 +1,6 @@
+{
+	"/": [],
+	"/weather": [
+		"src/routes/weather/+server.js"
+	]
+}
